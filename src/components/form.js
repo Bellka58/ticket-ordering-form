@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import PassengerForm from "./passenger-form";
-import { TEST_URL } from "../constants/url";
+import { API_URL } from "../constants/url";
 
 const FormExampleFieldControlId = () => {
   const requiredFields = [
@@ -34,7 +34,7 @@ const FormExampleFieldControlId = () => {
     if (searchEmptyFields()) {
       alert('Необходимо заполнить все обязательные поля');
     } else {
-      fetch(TEST_URL, {
+      fetch(API_URL, {
         method: 'POST',
         body: JSON.stringify(passengers),
         mode: 'no-cors'
@@ -61,7 +61,7 @@ const FormExampleFieldControlId = () => {
   };
 
   const handleDeletePassenger = (index) => {
-    if(passengers.length > 1) {
+    if (passengers.length > 1) {
       setPassengers((prev) => [
         ...prev.slice(0, index),
         ...prev.slice(index + 1),

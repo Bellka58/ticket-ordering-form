@@ -1,1 +1,1 @@
-export const TEST_URL = 'https://webhook.site/7220caad-21be-419e-8bf2-853f0ead3d8d';
+export const API_URL = 'https://webhook.site/7220caad-21be-419e-8bf2-853f0ead3d8d';
