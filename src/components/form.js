@@ -24,6 +24,8 @@ const FormExampleFieldControlId = () => {
       nationality: "Россия",
       snils: "",
       agreement: false,
+      phone: "",
+      email: "",
     },
   ]);
 
@@ -57,6 +59,8 @@ const FormExampleFieldControlId = () => {
       nationality: "Россия",
       snils: "",
       agreement: false,
+      phone: "",
+      email: "",
     }])
   };
 

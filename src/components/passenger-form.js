@@ -27,6 +27,8 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
     nationality,
     snils,
     agreement,
+    phone,
+    email,
   } = passenger;
 
 
@@ -58,13 +60,12 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
       </div>
       <Form.Group widths="equal">
         <Form.Field
-            id={`${number}`}
+          id={`snils-${number}`}
             control={Input}
             label="CНИЛС"
             name="snils"
             value={snils}
             onChange={handleChange}
-            onBlur={() => handleBlur("snils")}
           />
         <Form.Field />
         <Form.Field />
@@ -72,7 +73,7 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
       <Form.Group widths="equal">
         <Form.Field
           className="required"
-          id={`${number}`}
+          id={`lastName-${number}`}
           control={Input}
           label="Фамилия"
           name="lastName"
@@ -83,7 +84,7 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
         />
         <Form.Field
           className="required"
-          id={`${number}`}
+          id={`firstName-${number}`}
           control={Input}
           label="Имя"
           name="firstName"
@@ -94,7 +95,7 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
         />
         <Form.Field
           className="required"
-          id={`${number}`}
+          id={`middleName-${number}`}
           control={Input}
           label="Отчество (обязательно при наличии)"
           name="middleName"
@@ -107,7 +108,7 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
       <Form.Group widths="equal">
         <Form.Field
           className="required"
-          id={`${number}`}
+          id={`gender-${number}`}
           control={Select}
           options={genderOptions}
           label="Пол"
@@ -120,7 +121,7 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
         />
         <Form.Field
           className="required"
-          id={`${number}`}
+          id={`birthdate-${number}`}
           control={Input}
           label="Дата рождения"
           name="birthdate"
@@ -131,7 +132,7 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
         />
         <Form.Field
           className="required"
-          id={`${number}`}
+          id={`nationality-${number}`}
           control={Select}
           options={nationalityOptions}
           label="Гражданство"
@@ -149,6 +150,27 @@ const PassengerForm = ({ number, handleDeletePassenger, passenger, setPassenger 
         checked={agreement}
         onChange={handleCheckbox}
       />
+      {agreement && (
+      <Form.Group>
+        <Form.Field
+          id={`phone-${number}`}
+          control={Input}
+          label="Телефон"
+          name="phone"
+          value={phone}
+          onChange={handleChange}
+          width={5}
+        />
+        <Form.Field
+          id={`email-${number}`}
+          control={Input}
+          label="Email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+          width={5}
+        />
+      </Form.Group>)}
     </div>
   );
 };
